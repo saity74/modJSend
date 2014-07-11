@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="module" method="upgrade">
+	<name>mod_jsend</name>
+	<author>Buyanov Danila</author>
+	<creationDate>Sep 2013</creationDate>
+	<copyright>Copyright (C) 2005 - 2012 Buyanov Danila. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@saity74.ru</authorEmail>
+	<authorUrl>www.saity74.ru</authorUrl>
+	<version>1.0</version>
+	<description>MOD_JSEND_DESC</description>
+	
+	<files>
+		<filename module="mod_jsend">mod_jsend.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/modal.php</filename>
+		<filename>tmpl/mini.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jsend.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jsend.sys.ini</language>
+	</languages>
+
+        <config>
+		<fields name="params">
+			<fieldset name="style">
+				<field name="layout" type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+			</fieldset>
+			<fieldset name="basic">
+				<field
+					name="header"
+					type="text"
+					default=""
+					label="MOD_JSEND_FIELD_HEADER_LABEL"
+					description="MOD_JSEND_FIELD_HEADER_DESC" />
+				
+				<field
+					name="showname"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWNAME_LABEL"
+					description="MOD_JSEND_FIELD_SHOWNAME_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+					<option
+						value="2">JREQUIRED</option>
+				</field>
+				
+				<field
+					name="showfirm"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWFIRM_LABEL"
+					description="MOD_JSEND_FIELD_SHOWFIRM_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+					<option
+						value="2">JREQUIRED</option>
+				</field>
+				
+				<field
+					name="showphone"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWPHONE_LABEL"
+					description="MOD_JSEND_FIELD_SHOWPHONE_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+					<option
+						value="2">JREQUIRED</option>
+				</field>
+				
+				
+				
+				<field
+					name="showemail"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWEMAIL_LABEL"
+					description="MOD_JSEND_FIELD_SHOWEMAIL_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+					<option
+						value="2">JREQUIRED</option>
+				</field>
+				<field
+					name="showdesc"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWDESC_LABEL"
+					description="MOD_JSEND_FIELD_SHOWDESC_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+					<option
+						value="2">JREQUIRED</option>
+				</field>
+				
+				<field
+					name="showfileupload"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWUPLOAD_LABEL"
+					description="MOD_JSEND_FIELD_SHOWUPLOAD_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+				
+				<field
+					name="btntype"
+					type="text"
+					class="inputbox"
+					default="btn-success"
+					label="MOD_JSEND_FIELD_BTNTYPE_LABEL"
+					description="MOD_JSEND_FIELD_BTNTYPE_DESC">
+					
+				</field>
+				<field
+					name="btnsize"
+					type="list"
+					label="MOD_JSEND_FIELD_BTNSIZE_LABEL"
+					description="MOD_JSEND_FIELD_BTNSIZE_DESC">
+					<option
+						value="btn-mini">MOD_JSEND_BTNSIZE_MINI</option>
+					<option
+						value="btn-small">MOD_JSEND_BTNSIZE_SMALL</option>
+					<option
+						value="">MOD_JSEND_BTNSIZE_NORMAL</option>
+					<option
+						value="btn-large">MOD_JSEND_BTNSIZE_LARGE</option>
+					
+				</field>
+				
+				<field
+					name="showlist"
+					type="radio"
+					class="btn-group"
+					label="MOD_JSEND_FIELD_SHOWLIST_LABEL"
+					description="MOD_JSEND_FIELD_SHOWLIST_DESC">
+					<option
+						value="">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+					<option
+						value="2">JREQUIRED</option>
+				</field>
+				
+				<field
+					name="list"
+					type="textarea"
+					default=""
+					label="MOD_JSEND_FIELD_LIST_LABEL"
+					description="MOD_JSEND_FIELD_LIST_DESC"
+					cols="50"
+					rows="10"
+					/>
+				
+				<field
+					name="text"
+					type="editor"
+					default=""
+					label="MOD_JSEND_FIELD_TEXT_LABEL"
+					description="MOD_JSEND_FIELD_TEXT_DESC"
+					class="inputbox"
+					filter="JComponentHelper::filterText"
+					buttons="false"	/>	
+			</fieldset>
+			<fieldset name="client_mail">
+				<field
+					name="client_subject"
+					type="text"
+					default=""
+					label="MOD_JSEND_FIELD_CLIENT_SUBJECT_LABEL"
+					description="MOD_JSEND_FIELD_CLIENT_SUBJECT_DESC" />
+				
+				<field
+					name="client_greeting"
+					type="editor"
+					default=""
+					label="MOD_JSEND_FIELD_CLIENT_GREETING_LABEL"
+					description="MOD_JSEND_FIELD_CLIENT_GREETING_DESC"
+					class="inputbox"
+					filter="JComponentHelper::filterText"
+					buttons="false" />
+				
+				<field
+					name="client_body"
+					type="editor"
+					default=""
+					label="MOD_JSEND_FIELD_CLIENT_BODY_LABEL"
+					description="MOD_JSEND_FIELD_CLIENT_BODY_DESC"
+					class="inputbox"
+					filter="JComponentHelper::filterText"
+					buttons="false" />
+			</fieldset>
+			<fieldset name="manager_mail">
+				<field
+					name="manager_email"
+					type="text"
+					default=""
+					label="MOD_JSEND_FIELD_MANAGER_MAIL_LABEL"
+					description="MOD_JSEND_FIELD_MANAGER_MAIL_DESC" />
+				
+				<field
+					name="manager_subject"
+					type="text"
+					default=""
+					label="MOD_JSEND_FIELD_MANAGER_SUBJECT_LABEL"
+					description="MOD_JSEND_FIELD_MANAGER_SUBJECT_DESC" />
+				
+				<field
+					name="manager_greeting"
+					type="editor"
+					default=""
+					label="MOD_JSEND_FIELD_MANAGER_GREETING_LABEL"
+					description="MOD_JSEND_FIELD_MANAGER_GREETING_DESC"
+					class="inputbox"
+					filter="JComponentHelper::filterText"
+					buttons="false" />
+				
+				<field
+					name="manager_body"
+					type="editor"
+					default=""
+					label="MOD_JSEND_FIELD_MANAGER_BODY_LABEL"
+					description="MOD_JSEND_FIELD_MANAGER_BODY_DESC"
+					class="inputbox"
+					filter="JComponentHelper::filterText"
+					buttons="false" />
+			</fieldset>
+			<fieldset name="metrika">
+				<field name="btn_code" type="text"
+					label="MOD_JSEND_FIELD_BUTTON_CODE_LABEL" description="MOD_JSEND_FIELD_BUTTON_CODE_DESC" />
+			</fieldset>
+		</fields>
+        </config>
+</extension>
