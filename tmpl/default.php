@@ -32,7 +32,7 @@ if ($list && !empty($list_arr))
 
 <div class="form-border">
     <div class="form-bg">
-        <form class="mail-form form-validate" method="post" action="index.php" enctype="multipart/form-data">
+        <form class="mail-form form-validate" method="post" id="ord-form" action="/index.php" enctype="multipart/form-data">
 
             <?php if ($header = $params->get('header')) : ?>
                 <h3 class="form-header"><?php echo $header ?></h3>
